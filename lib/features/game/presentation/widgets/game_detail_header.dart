@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:igdb_games/helpers/resize_image.dart';
 
 class GameDetailHeader extends StatelessWidget implements PreferredSizeWidget {
   final String image;
@@ -20,7 +21,7 @@ class GameDetailHeader extends StatelessWidget implements PreferredSizeWidget {
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height * .3,
             child: Image.network(
-              'https:$image',
+              'https:${resizeImage(image)}',
               fit: BoxFit.cover,
             ),
           ),

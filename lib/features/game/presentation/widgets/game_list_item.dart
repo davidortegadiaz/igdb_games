@@ -26,9 +26,12 @@ class GameListItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             CardItemHeader(url: game.artworks![0].url),
-            Text(
-              game.name!,
-              style: Styles.cardTitle,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 5.0),
+              child: Text(
+                game.name!,
+                style: Styles.cardTitle,
+              ),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 5),

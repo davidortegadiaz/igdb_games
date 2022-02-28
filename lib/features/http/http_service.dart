@@ -15,8 +15,7 @@ class HTTPService {
   Future<Response> post({String body = ''}) async {
     return _dio.post(
       'https://api.igdb.com/v4/games',
-      data: '''fields id,name,rating,rating_count,artworks.url,genres.name,storyline,videos.video_id;
-            sort rating desc;
+      data: '''fields id,name,rating,rating_count,artworks.url,genres.name,storyline,videos.video_id,artworks.image_id;
             where artworks != null & rating != null & rating_count != null & genres != null & storyline != null & videos != null;
             limit 100;''',
     );

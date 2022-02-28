@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:igdb_games/features/game_list/domain/bloc/game_event.dart';
@@ -15,9 +17,10 @@ class GameBloc extends Bloc<GameEvent, GameState> {
     emit(GameLoadingState());
     try {
       final Response response = await gameRepository.fetchGames();
-      final List<Game> list = response.data as List<Game>;
+      final List<Game> list = (response.data as List).map((e) => Game.fromJson(e)).toList();
       emit(GameSuccessState(gameList: list));
     } catch (e) {
+      log(e.toString());
       emit(GameErrorState());
     }
   }

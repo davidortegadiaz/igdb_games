@@ -9,5 +9,6 @@ class GameErrorState extends GameState {}
 class GameLoadingState extends GameState {}
 
 class GameSuccessState extends GameState {
-  GameSuccessState({List<Game> gameList = const []});
+  final List<Game>? gameList;
+  GameSuccessState({this.gameList = const []});
 }

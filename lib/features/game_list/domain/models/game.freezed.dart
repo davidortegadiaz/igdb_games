@@ -23,17 +23,23 @@ class _$GameTearOff {
   const _$GameTearOff();
 
   _Game call(
-      {required String id,
-      required String name,
-      required String cover,
-      required double rating,
-      required int ratingCount}) {
+      {int? id,
+      String? name,
+      Cover? cover,
+      double? rating,
+      @JsonKey(name: 'rating_count') int? ratingCount,
+      List<Genre>? genres,
+      String? storyline,
+      List<Video>? videos}) {
     return _Game(
       id: id,
       name: name,
       cover: cover,
       rating: rating,
       ratingCount: ratingCount,
+      genres: genres,
+      storyline: storyline,
+      videos: videos,
     );
   }
 
@@ -47,11 +53,15 @@ const $Game = _$GameTearOff();
 
 /// @nodoc
 mixin _$Game {
-  String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get cover => throw _privateConstructorUsedError;
-  double get rating => throw _privateConstructorUsedError;
-  int get ratingCount => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  Cover? get cover => throw _privateConstructorUsedError;
+  double? get rating => throw _privateConstructorUsedError;
+  @JsonKey(name: 'rating_count')
+  int? get ratingCount => throw _privateConstructorUsedError;
+  List<Genre>? get genres => throw _privateConstructorUsedError;
+  String? get storyline => throw _privateConstructorUsedError;
+  List<Video>? get videos => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -63,7 +73,16 @@ abstract class $GameCopyWith<$Res> {
   factory $GameCopyWith(Game value, $Res Function(Game) then) =
       _$GameCopyWithImpl<$Res>;
   $Res call(
-      {String id, String name, String cover, double rating, int ratingCount});
+      {int? id,
+      String? name,
+      Cover? cover,
+      double? rating,
+      @JsonKey(name: 'rating_count') int? ratingCount,
+      List<Genre>? genres,
+      String? storyline,
+      List<Video>? videos});
+
+  $CoverCopyWith<$Res>? get cover;
 }
 
 /// @nodoc
@@ -81,29 +100,55 @@ class _$GameCopyWithImpl<$Res> implements $GameCopyWith<$Res> {
     Object? cover = freezed,
     Object? rating = freezed,
     Object? ratingCount = freezed,
+    Object? genres = freezed,
+    Object? storyline = freezed,
+    Object? videos = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int?,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       cover: cover == freezed
           ? _value.cover
           : cover // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Cover?,
       rating: rating == freezed
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
-              as double,
+              as double?,
       ratingCount: ratingCount == freezed
           ? _value.ratingCount
           : ratingCount // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
+      genres: genres == freezed
+          ? _value.genres
+          : genres // ignore: cast_nullable_to_non_nullable
+              as List<Genre>?,
+      storyline: storyline == freezed
+          ? _value.storyline
+          : storyline // ignore: cast_nullable_to_non_nullable
+              as String?,
+      videos: videos == freezed
+          ? _value.videos
+          : videos // ignore: cast_nullable_to_non_nullable
+              as List<Video>?,
     ));
+  }
+
+  @override
+  $CoverCopyWith<$Res>? get cover {
+    if (_value.cover == null) {
+      return null;
+    }
+
+    return $CoverCopyWith<$Res>(_value.cover!, (value) {
+      return _then(_value.copyWith(cover: value));
+    });
   }
 }
 
@@ -113,7 +158,17 @@ abstract class _$GameCopyWith<$Res> implements $GameCopyWith<$Res> {
       __$GameCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String id, String name, String cover, double rating, int ratingCount});
+      {int? id,
+      String? name,
+      Cover? cover,
+      double? rating,
+      @JsonKey(name: 'rating_count') int? ratingCount,
+      List<Genre>? genres,
+      String? storyline,
+      List<Video>? videos});
+
+  @override
+  $CoverCopyWith<$Res>? get cover;
 }
 
 /// @nodoc
@@ -132,28 +187,43 @@ class __$GameCopyWithImpl<$Res> extends _$GameCopyWithImpl<$Res>
     Object? cover = freezed,
     Object? rating = freezed,
     Object? ratingCount = freezed,
+    Object? genres = freezed,
+    Object? storyline = freezed,
+    Object? videos = freezed,
   }) {
     return _then(_Game(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int?,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       cover: cover == freezed
           ? _value.cover
           : cover // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Cover?,
       rating: rating == freezed
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
-              as double,
+              as double?,
       ratingCount: ratingCount == freezed
           ? _value.ratingCount
           : ratingCount // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
+      genres: genres == freezed
+          ? _value.genres
+          : genres // ignore: cast_nullable_to_non_nullable
+              as List<Genre>?,
+      storyline: storyline == freezed
+          ? _value.storyline
+          : storyline // ignore: cast_nullable_to_non_nullable
+              as String?,
+      videos: videos == freezed
+          ? _value.videos
+          : videos // ignore: cast_nullable_to_non_nullable
+              as List<Video>?,
     ));
   }
 }
@@ -162,28 +232,38 @@ class __$GameCopyWithImpl<$Res> extends _$GameCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Game implements _Game {
   _$_Game(
-      {required this.id,
-      required this.name,
-      required this.cover,
-      required this.rating,
-      required this.ratingCount});
+      {this.id,
+      this.name,
+      this.cover,
+      this.rating,
+      @JsonKey(name: 'rating_count') this.ratingCount,
+      this.genres,
+      this.storyline,
+      this.videos});
 
   factory _$_Game.fromJson(Map<String, dynamic> json) => _$$_GameFromJson(json);
 
   @override
-  final String id;
+  final int? id;
   @override
-  final String name;
+  final String? name;
   @override
-  final String cover;
+  final Cover? cover;
   @override
-  final double rating;
+  final double? rating;
   @override
-  final int ratingCount;
+  @JsonKey(name: 'rating_count')
+  final int? ratingCount;
+  @override
+  final List<Genre>? genres;
+  @override
+  final String? storyline;
+  @override
+  final List<Video>? videos;
 
   @override
   String toString() {
-    return 'Game(id: $id, name: $name, cover: $cover, rating: $rating, ratingCount: $ratingCount)';
+    return 'Game(id: $id, name: $name, cover: $cover, rating: $rating, ratingCount: $ratingCount, genres: $genres, storyline: $storyline, videos: $videos)';
   }
 
   @override
@@ -196,7 +276,10 @@ class _$_Game implements _Game {
             const DeepCollectionEquality().equals(other.cover, cover) &&
             const DeepCollectionEquality().equals(other.rating, rating) &&
             const DeepCollectionEquality()
-                .equals(other.ratingCount, ratingCount));
+                .equals(other.ratingCount, ratingCount) &&
+            const DeepCollectionEquality().equals(other.genres, genres) &&
+            const DeepCollectionEquality().equals(other.storyline, storyline) &&
+            const DeepCollectionEquality().equals(other.videos, videos));
   }
 
   @override
@@ -206,7 +289,10 @@ class _$_Game implements _Game {
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(cover),
       const DeepCollectionEquality().hash(rating),
-      const DeepCollectionEquality().hash(ratingCount));
+      const DeepCollectionEquality().hash(ratingCount),
+      const DeepCollectionEquality().hash(genres),
+      const DeepCollectionEquality().hash(storyline),
+      const DeepCollectionEquality().hash(videos));
 
   @JsonKey(ignore: true)
   @override
@@ -221,24 +307,34 @@ class _$_Game implements _Game {
 
 abstract class _Game implements Game {
   factory _Game(
-      {required String id,
-      required String name,
-      required String cover,
-      required double rating,
-      required int ratingCount}) = _$_Game;
+      {int? id,
+      String? name,
+      Cover? cover,
+      double? rating,
+      @JsonKey(name: 'rating_count') int? ratingCount,
+      List<Genre>? genres,
+      String? storyline,
+      List<Video>? videos}) = _$_Game;
 
   factory _Game.fromJson(Map<String, dynamic> json) = _$_Game.fromJson;
 
   @override
-  String get id;
+  int? get id;
   @override
-  String get name;
+  String? get name;
   @override
-  String get cover;
+  Cover? get cover;
   @override
-  double get rating;
+  double? get rating;
   @override
-  int get ratingCount;
+  @JsonKey(name: 'rating_count')
+  int? get ratingCount;
+  @override
+  List<Genre>? get genres;
+  @override
+  String? get storyline;
+  @override
+  List<Video>? get videos;
   @override
   @JsonKey(ignore: true)
   _$GameCopyWith<_Game> get copyWith => throw _privateConstructorUsedError;

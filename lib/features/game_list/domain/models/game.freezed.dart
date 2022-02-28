@@ -25,7 +25,7 @@ class _$GameTearOff {
   _Game call(
       {int? id,
       String? name,
-      Cover? cover,
+      List<Artwork>? artworks,
       double? rating,
       @JsonKey(name: 'rating_count') int? ratingCount,
       List<Genre>? genres,
@@ -34,7 +34,7 @@ class _$GameTearOff {
     return _Game(
       id: id,
       name: name,
-      cover: cover,
+      artworks: artworks,
       rating: rating,
       ratingCount: ratingCount,
       genres: genres,
@@ -55,7 +55,7 @@ const $Game = _$GameTearOff();
 mixin _$Game {
   int? get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
-  Cover? get cover => throw _privateConstructorUsedError;
+  List<Artwork>? get artworks => throw _privateConstructorUsedError;
   double? get rating => throw _privateConstructorUsedError;
   @JsonKey(name: 'rating_count')
   int? get ratingCount => throw _privateConstructorUsedError;
@@ -75,14 +75,12 @@ abstract class $GameCopyWith<$Res> {
   $Res call(
       {int? id,
       String? name,
-      Cover? cover,
+      List<Artwork>? artworks,
       double? rating,
       @JsonKey(name: 'rating_count') int? ratingCount,
       List<Genre>? genres,
       String? storyline,
       List<Video>? videos});
-
-  $CoverCopyWith<$Res>? get cover;
 }
 
 /// @nodoc
@@ -97,7 +95,7 @@ class _$GameCopyWithImpl<$Res> implements $GameCopyWith<$Res> {
   $Res call({
     Object? id = freezed,
     Object? name = freezed,
-    Object? cover = freezed,
+    Object? artworks = freezed,
     Object? rating = freezed,
     Object? ratingCount = freezed,
     Object? genres = freezed,
@@ -113,10 +111,10 @@ class _$GameCopyWithImpl<$Res> implements $GameCopyWith<$Res> {
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      cover: cover == freezed
-          ? _value.cover
-          : cover // ignore: cast_nullable_to_non_nullable
-              as Cover?,
+      artworks: artworks == freezed
+          ? _value.artworks
+          : artworks // ignore: cast_nullable_to_non_nullable
+              as List<Artwork>?,
       rating: rating == freezed
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
@@ -139,17 +137,6 @@ class _$GameCopyWithImpl<$Res> implements $GameCopyWith<$Res> {
               as List<Video>?,
     ));
   }
-
-  @override
-  $CoverCopyWith<$Res>? get cover {
-    if (_value.cover == null) {
-      return null;
-    }
-
-    return $CoverCopyWith<$Res>(_value.cover!, (value) {
-      return _then(_value.copyWith(cover: value));
-    });
-  }
 }
 
 /// @nodoc
@@ -160,15 +147,12 @@ abstract class _$GameCopyWith<$Res> implements $GameCopyWith<$Res> {
   $Res call(
       {int? id,
       String? name,
-      Cover? cover,
+      List<Artwork>? artworks,
       double? rating,
       @JsonKey(name: 'rating_count') int? ratingCount,
       List<Genre>? genres,
       String? storyline,
       List<Video>? videos});
-
-  @override
-  $CoverCopyWith<$Res>? get cover;
 }
 
 /// @nodoc
@@ -184,7 +168,7 @@ class __$GameCopyWithImpl<$Res> extends _$GameCopyWithImpl<$Res>
   $Res call({
     Object? id = freezed,
     Object? name = freezed,
-    Object? cover = freezed,
+    Object? artworks = freezed,
     Object? rating = freezed,
     Object? ratingCount = freezed,
     Object? genres = freezed,
@@ -200,10 +184,10 @@ class __$GameCopyWithImpl<$Res> extends _$GameCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      cover: cover == freezed
-          ? _value.cover
-          : cover // ignore: cast_nullable_to_non_nullable
-              as Cover?,
+      artworks: artworks == freezed
+          ? _value.artworks
+          : artworks // ignore: cast_nullable_to_non_nullable
+              as List<Artwork>?,
       rating: rating == freezed
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
@@ -234,7 +218,7 @@ class _$_Game implements _Game {
   _$_Game(
       {this.id,
       this.name,
-      this.cover,
+      this.artworks,
       this.rating,
       @JsonKey(name: 'rating_count') this.ratingCount,
       this.genres,
@@ -248,7 +232,7 @@ class _$_Game implements _Game {
   @override
   final String? name;
   @override
-  final Cover? cover;
+  final List<Artwork>? artworks;
   @override
   final double? rating;
   @override
@@ -263,7 +247,7 @@ class _$_Game implements _Game {
 
   @override
   String toString() {
-    return 'Game(id: $id, name: $name, cover: $cover, rating: $rating, ratingCount: $ratingCount, genres: $genres, storyline: $storyline, videos: $videos)';
+    return 'Game(id: $id, name: $name, artworks: $artworks, rating: $rating, ratingCount: $ratingCount, genres: $genres, storyline: $storyline, videos: $videos)';
   }
 
   @override
@@ -273,7 +257,7 @@ class _$_Game implements _Game {
             other is _Game &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality().equals(other.cover, cover) &&
+            const DeepCollectionEquality().equals(other.artworks, artworks) &&
             const DeepCollectionEquality().equals(other.rating, rating) &&
             const DeepCollectionEquality()
                 .equals(other.ratingCount, ratingCount) &&
@@ -287,7 +271,7 @@ class _$_Game implements _Game {
       runtimeType,
       const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(cover),
+      const DeepCollectionEquality().hash(artworks),
       const DeepCollectionEquality().hash(rating),
       const DeepCollectionEquality().hash(ratingCount),
       const DeepCollectionEquality().hash(genres),
@@ -309,7 +293,7 @@ abstract class _Game implements Game {
   factory _Game(
       {int? id,
       String? name,
-      Cover? cover,
+      List<Artwork>? artworks,
       double? rating,
       @JsonKey(name: 'rating_count') int? ratingCount,
       List<Genre>? genres,
@@ -323,7 +307,7 @@ abstract class _Game implements Game {
   @override
   String? get name;
   @override
-  Cover? get cover;
+  List<Artwork>? get artworks;
   @override
   double? get rating;
   @override

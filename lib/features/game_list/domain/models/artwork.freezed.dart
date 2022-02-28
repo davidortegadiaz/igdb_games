@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'cover.dart';
+part of 'artwork.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,53 +14,53 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-Cover _$CoverFromJson(Map<String, dynamic> json) {
-  return _Cover.fromJson(json);
+Artwork _$ArtworkFromJson(Map<String, dynamic> json) {
+  return _Artwork.fromJson(json);
 }
 
 /// @nodoc
-class _$CoverTearOff {
-  const _$CoverTearOff();
+class _$ArtworkTearOff {
+  const _$ArtworkTearOff();
 
-  _Cover call({required int id, required String url}) {
-    return _Cover(
+  _Artwork call({required int id, required String url}) {
+    return _Artwork(
       id: id,
       url: url,
     );
   }
 
-  Cover fromJson(Map<String, Object?> json) {
-    return Cover.fromJson(json);
+  Artwork fromJson(Map<String, Object?> json) {
+    return Artwork.fromJson(json);
   }
 }
 
 /// @nodoc
-const $Cover = _$CoverTearOff();
+const $Artwork = _$ArtworkTearOff();
 
 /// @nodoc
-mixin _$Cover {
+mixin _$Artwork {
   int get id => throw _privateConstructorUsedError;
   String get url => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CoverCopyWith<Cover> get copyWith => throw _privateConstructorUsedError;
+  $ArtworkCopyWith<Artwork> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CoverCopyWith<$Res> {
-  factory $CoverCopyWith(Cover value, $Res Function(Cover) then) =
-      _$CoverCopyWithImpl<$Res>;
+abstract class $ArtworkCopyWith<$Res> {
+  factory $ArtworkCopyWith(Artwork value, $Res Function(Artwork) then) =
+      _$ArtworkCopyWithImpl<$Res>;
   $Res call({int id, String url});
 }
 
 /// @nodoc
-class _$CoverCopyWithImpl<$Res> implements $CoverCopyWith<$Res> {
-  _$CoverCopyWithImpl(this._value, this._then);
+class _$ArtworkCopyWithImpl<$Res> implements $ArtworkCopyWith<$Res> {
+  _$ArtworkCopyWithImpl(this._value, this._then);
 
-  final Cover _value;
+  final Artwork _value;
   // ignore: unused_field
-  final $Res Function(Cover) _then;
+  final $Res Function(Artwork) _then;
 
   @override
   $Res call({
@@ -81,28 +81,28 @@ class _$CoverCopyWithImpl<$Res> implements $CoverCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$CoverCopyWith<$Res> implements $CoverCopyWith<$Res> {
-  factory _$CoverCopyWith(_Cover value, $Res Function(_Cover) then) =
-      __$CoverCopyWithImpl<$Res>;
+abstract class _$ArtworkCopyWith<$Res> implements $ArtworkCopyWith<$Res> {
+  factory _$ArtworkCopyWith(_Artwork value, $Res Function(_Artwork) then) =
+      __$ArtworkCopyWithImpl<$Res>;
   @override
   $Res call({int id, String url});
 }
 
 /// @nodoc
-class __$CoverCopyWithImpl<$Res> extends _$CoverCopyWithImpl<$Res>
-    implements _$CoverCopyWith<$Res> {
-  __$CoverCopyWithImpl(_Cover _value, $Res Function(_Cover) _then)
-      : super(_value, (v) => _then(v as _Cover));
+class __$ArtworkCopyWithImpl<$Res> extends _$ArtworkCopyWithImpl<$Res>
+    implements _$ArtworkCopyWith<$Res> {
+  __$ArtworkCopyWithImpl(_Artwork _value, $Res Function(_Artwork) _then)
+      : super(_value, (v) => _then(v as _Artwork));
 
   @override
-  _Cover get _value => super._value as _Cover;
+  _Artwork get _value => super._value as _Artwork;
 
   @override
   $Res call({
     Object? id = freezed,
     Object? url = freezed,
   }) {
-    return _then(_Cover(
+    return _then(_Artwork(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -117,11 +117,11 @@ class __$CoverCopyWithImpl<$Res> extends _$CoverCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Cover implements _Cover {
-  _$_Cover({required this.id, required this.url});
+class _$_Artwork implements _Artwork {
+  _$_Artwork({required this.id, required this.url});
 
-  factory _$_Cover.fromJson(Map<String, dynamic> json) =>
-      _$$_CoverFromJson(json);
+  factory _$_Artwork.fromJson(Map<String, dynamic> json) =>
+      _$$_ArtworkFromJson(json);
 
   @override
   final int id;
@@ -130,14 +130,14 @@ class _$_Cover implements _Cover {
 
   @override
   String toString() {
-    return 'Cover(id: $id, url: $url)';
+    return 'Artwork(id: $id, url: $url)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Cover &&
+            other is _Artwork &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.url, url));
   }
@@ -150,19 +150,19 @@ class _$_Cover implements _Cover {
 
   @JsonKey(ignore: true)
   @override
-  _$CoverCopyWith<_Cover> get copyWith =>
-      __$CoverCopyWithImpl<_Cover>(this, _$identity);
+  _$ArtworkCopyWith<_Artwork> get copyWith =>
+      __$ArtworkCopyWithImpl<_Artwork>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CoverToJson(this);
+    return _$$_ArtworkToJson(this);
   }
 }
 
-abstract class _Cover implements Cover {
-  factory _Cover({required int id, required String url}) = _$_Cover;
+abstract class _Artwork implements Artwork {
+  factory _Artwork({required int id, required String url}) = _$_Artwork;
 
-  factory _Cover.fromJson(Map<String, dynamic> json) = _$_Cover.fromJson;
+  factory _Artwork.fromJson(Map<String, dynamic> json) = _$_Artwork.fromJson;
 
   @override
   int get id;
@@ -170,5 +170,6 @@ abstract class _Cover implements Cover {
   String get url;
   @override
   @JsonKey(ignore: true)
-  _$CoverCopyWith<_Cover> get copyWith => throw _privateConstructorUsedError;
+  _$ArtworkCopyWith<_Artwork> get copyWith =>
+      throw _privateConstructorUsedError;
 }

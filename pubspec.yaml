@@ -33,6 +33,8 @@ dependencies:
   bloc: ^8.0.2
   floor: ^1.2.0
   get: ^4.6.1
+  freezed: ^1.1.1
+  json_serializable: ^6.1.4
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -42,6 +44,8 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  freezed_annotation: ^1.1.0
+  build_runner: ^2.1.7
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

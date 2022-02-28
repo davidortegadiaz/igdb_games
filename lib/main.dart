@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:igdb_games/di/injector.dart';
-import 'package:igdb_games/features/game_list/presentation/pages/game_list_page.dart';
+import 'package:igdb_games/features/game/presentation/pages/game_list_page.dart';
+
+import 'features/game/presentation/pages/game_list_page.dart';
 
 void main() {
   injection();

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
-import 'package:igdb_games/features/game_list/domain/bloc/game_bloc.dart';
-import 'package:igdb_games/features/game_list/domain/bloc/game_event.dart';
-import 'package:igdb_games/features/game_list/domain/bloc/game_state.dart';
-import 'package:igdb_games/features/game_list/presentation/widgets/game_list_item.dart';
+import 'package:igdb_games/features/game/domain/bloc/game_bloc.dart';
+import 'package:igdb_games/features/game/domain/bloc/game_event.dart';
+import 'package:igdb_games/features/game/domain/bloc/game_state.dart';
+import 'package:igdb_games/features/game/presentation/widgets/game_list_item.dart';
 import 'package:igdb_games/styles/custom_colours.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 

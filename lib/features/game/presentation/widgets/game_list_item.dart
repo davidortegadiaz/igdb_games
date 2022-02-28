@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:igdb_games/features/game_detail/presentation/pages/game_detail_page.dart';
-import 'package:igdb_games/features/game_list/domain/models/game.dart';
-import 'package:igdb_games/features/game_list/presentation/widgets/card_item_header.dart';
+import 'package:igdb_games/features/game/domain/models/game.dart';
+import 'package:igdb_games/features/game/presentation/pages/game_detail_page.dart';
+import 'package:igdb_games/features/game/presentation/widgets/card_item_header.dart';
 import 'package:igdb_games/styles/custom_colours.dart';
 import 'package:igdb_games/styles/fonts.dart';
 

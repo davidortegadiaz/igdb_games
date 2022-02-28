@@ -1,4 +1,4 @@
-import 'package:igdb_games/features/game_list/domain/models/game.dart';
+import 'package:igdb_games/features/game/domain/models/game.dart';
 
 abstract class GameState {}
 

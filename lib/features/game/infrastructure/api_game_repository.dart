@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:igdb_games/features/game_list/domain/repositories/game_repository.dart';
+import 'package:igdb_games/features/game/domain/repositories/game_repository.dart';
 import 'package:igdb_games/features/http/http_service.dart';
 
 class ApiGameRepository implements GameRepository {

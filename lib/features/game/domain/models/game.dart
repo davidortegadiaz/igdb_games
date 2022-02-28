@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:igdb_games/features/game_list/domain/models/artwork.dart';
-import 'package:igdb_games/features/game_list/domain/models/genre.dart';
-import 'package:igdb_games/features/game_list/domain/models/video.dart';
+import 'package:igdb_games/features/game/domain/models/artwork.dart';
+import 'package:igdb_games/features/game/domain/models/genre.dart';
+import 'package:igdb_games/features/game/domain/models/video.dart';
 
 part 'game.g.dart';
 part 'game.freezed.dart';

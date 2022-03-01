@@ -15,7 +15,7 @@ class GameDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: CustomColours.cardColor,
-      appBar: GameDetailHeader(image: game.artworks![0].url),
+      appBar: GameDetailHeader(image: game.artworks[0].url),
       body: SingleChildScrollView(
         child: Builder(builder: (context) {
           return Padding(
@@ -24,7 +24,7 @@ class GameDetailPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  game.name!,
+                  game.name,
                   style: Styles.detailTitle,
                 ),
                 const SizedBox(height: 10),
@@ -32,7 +32,7 @@ class GameDetailPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Text(
-                      'Rate: ${game.rating!.toInt()}',
+                      'Rate: ${game.rating.toInt()}',
                       style: Styles.normal,
                     ),
                     Text(
@@ -43,11 +43,11 @@ class GameDetailPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 10),
                 Text(
-                  game.storyline!,
+                  game.storyline,
                   style: Styles.storyline,
                 ),
                 const SizedBox(height: 10),
-                MyYoutubePlayer(videoId: game.videos![0].videoId),
+                MyYoutubePlayer(videoId: game.videos[0].videoId),
                 const SizedBox(height: 20),
                 Text(
                   'Genres',
@@ -57,7 +57,7 @@ class GameDetailPage extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    for (Genre genre in game.genres!) ...[
+                    for (Genre genre in game.genres) ...[
                       Text(
                         genre.name,
                         style: Styles.normal,

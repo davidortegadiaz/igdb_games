@@ -1,14 +1,25 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:floor/floor.dart';
 
-part 'artwork.g.dart';
-part 'artwork.freezed.dart';
+@entity
+class Artwork {
+  @primaryKey
+  final int id;
+  final String url;
+  Artwork({required this.id, required this.url});
 
-@freezed
-class Artwork with _$Artwork {
-  factory Artwork({
-    required int id,
-    required String url,
-  }) = _Artwork;
+  factory Artwork.fromJson(Map<String, dynamic> json) => Artwork(
+        id: json['id'] as int,
+        url: json['url'],
+      );
 
-  factory Artwork.fromJson(Map<String, dynamic> json) => _$ArtworkFromJson(json);
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        'url': url,
+      };
+
+  @override
+  bool operator ==(Object other) => identical(this, other) || other is Artwork && id == other.id && url == other.url;
+
+  @override
+  int get hashCode => id.hashCode ^ url.hashCode;
 }

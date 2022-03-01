@@ -25,11 +25,11 @@ class GameListItem extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            CardItemHeader(url: game.artworks![0].url),
+            CardItemHeader(url: game.artworks[0].url),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 5.0),
               child: Text(
-                game.name!,
+                game.name,
                 style: Styles.cardTitle,
               ),
             ),
@@ -39,7 +39,7 @@ class GameListItem extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Text(
-                    'Rate: ${game.rating!.toInt()}',
+                    'Rate: ${game.rating.toInt()}',
                     style: Styles.normal,
                   ),
                   Text(

@@ -1,14 +1,26 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:floor/floor.dart';
 
-part 'video.g.dart';
-part 'video.freezed.dart';
+@entity
+class Video {
+  @primaryKey
+  final int id;
+  final String videoId;
+  Video({required this.id, required this.videoId});
 
-@freezed
-class Video with _$Video {
-  factory Video({
-    required int id,
-    @JsonKey(name: 'video_id') required String videoId,
-  }) = _Video;
+  factory Video.fromJson(Map<String, dynamic> json) => Video(
+        id: json['id'] as int,
+        videoId: json['video_id'],
+      );
 
-  factory Video.fromJson(Map<String, dynamic> json) => _$VideoFromJson(json);
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        'video_id': videoId,
+      };
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is Video && id == other.id && videoId == other.videoId;
+
+  @override
+  int get hashCode => id.hashCode ^ videoId.hashCode;
 }

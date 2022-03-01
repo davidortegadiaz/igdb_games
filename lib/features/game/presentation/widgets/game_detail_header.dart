@@ -32,7 +32,7 @@ class GameDetailHeader extends StatelessWidget implements PreferredSizeWidget {
               onPressed: () => Get.back(),
               icon: const Icon(
                 Icons.arrow_back,
-                color: Colors.white,
+                color: Colors.transparent,
               )),
         ),
       ],

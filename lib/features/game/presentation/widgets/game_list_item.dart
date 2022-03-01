@@ -21,7 +21,7 @@ class GameListItem extends StatelessWidget {
         margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
         padding: const EdgeInsets.only(bottom: 10),
         alignment: Alignment.center,
-        height: MediaQuery.of(context).size.height * .4,
+        height: MediaQuery.of(context).size.height * .35,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -37,7 +37,16 @@ class GameListItem extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 5),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [Text('Rate: ${game.rating!.toInt()}'), Text('${game.ratingCount} People score')],
+                children: [
+                  Text(
+                    'Rate: ${game.rating!.toInt()}',
+                    style: Styles.normal,
+                  ),
+                  Text(
+                    '${game.ratingCount} People score',
+                    style: Styles.normal,
+                  )
+                ],
               ),
             )
           ],

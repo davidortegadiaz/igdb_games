@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:igdb_games/helpers/resize_image.dart';
+import 'package:igdb_games/features/game/presentation/widgets/image_widget.dart';
 
 class GameDetailHeader extends StatelessWidget implements PreferredSizeWidget {
   final String image;
@@ -20,20 +20,18 @@ class GameDetailHeader extends StatelessWidget implements PreferredSizeWidget {
           child: SizedBox(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height * .3,
-            child: Image.network(
-              'https:${resizeImage(image)}',
-              fit: BoxFit.cover,
-            ),
+            child: ImageWigdet(image: image),
           ),
         ),
         Container(
           margin: const EdgeInsets.all(15),
           child: IconButton(
-              onPressed: () => Get.back(),
-              icon: const Icon(
-                Icons.arrow_back,
-                color: Colors.transparent,
-              )),
+            onPressed: () => Get.back(),
+            icon: const Icon(
+              Icons.arrow_back,
+              color: Colors.transparent,
+            ),
+          ),
         ),
       ],
     );

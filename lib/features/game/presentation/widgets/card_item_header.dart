@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:igdb_games/helpers/resize_image.dart';
+import 'package:igdb_games/features/game/presentation/widgets/image_widget.dart';
 
 class CardItemHeader extends StatelessWidget {
   final String url;
@@ -17,7 +17,7 @@ class CardItemHeader extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         child: SizedBox.fromSize(
           size: const Size.fromRadius(20),
-          child: Image.network('https:${resizeImage(url)}', fit: BoxFit.cover),
+          child: ImageWigdet(image: url),
         ),
       ),
     );

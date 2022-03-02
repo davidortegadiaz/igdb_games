@@ -15,6 +15,7 @@ class MyYoutubePlayer extends StatelessWidget {
         hideControls: true,
       ),
     );
+
     return YoutubePlayer(
       controller: _controller,
       liveUIColor: Colors.amber,

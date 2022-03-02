@@ -10,11 +10,15 @@ class ApiGameRepository implements GameRepository {
   Future<Response> fetchGames() async {
     try {
       final Response _response = await httpService.post();
-      if (_response.statusCode != 200) {
-        throw Exception;
-      }
       return _response;
     } catch (e) {
+      final DioError error = e as DioError;
+      if (error.type != DioErrorType.cancel && error.type != DioErrorType.response) {
+        throw (DioError(
+          requestOptions: RequestOptions(path: 'https://api.igdb.com/v4/games'),
+          type: DioErrorType.connectTimeout,
+        ));
+      }
       rethrow;
     }
   }

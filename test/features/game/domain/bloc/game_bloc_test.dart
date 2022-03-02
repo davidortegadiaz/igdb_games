@@ -22,12 +22,10 @@ void voidMock() async {}
 void main() {
   late GameRepository mockGameRepository;
   late LocalStorageService mockLocalStorageService;
-  late GameBloc gameBloc;
 
   setUp(() {
     mockGameRepository = MockGameRepository();
     mockLocalStorageService = MockLocalStorageService();
-    gameBloc = GameBloc(gameRepository: mockGameRepository, localStorageService: mockLocalStorageService);
   });
 
   blocTest<GameBloc, GameState>(
